@@ -1,4 +1,4 @@
-package vlcj.test;
+package vlcj.multi_player;
 
 import java.awt.Component; 
 import java.awt.Dimension; 
@@ -24,6 +24,7 @@ public class AVPanel extends JPanel {
         boolean found = new NativeDiscovery().discover();
         System.out.println(found);
         System.out.println(LibVlc.INSTANCE.libvlc_get_version());
+        
         component = new EmbeddedMediaPlayerComponent();
         player = component.getMediaPlayer();
 
@@ -31,7 +32,9 @@ public class AVPanel extends JPanel {
         setAlignmentX(Component.LEFT_ALIGNMENT);
         setPreferredSize(new Dimension(640, 480));
         setVisible(true);
+        
         add(component, BorderLayout.CENTER);
+        
         player.addMediaPlayerEventListener(new MediaPlayerEventAdapter() {
             @Override
             public void finished(MediaPlayer mediaPlayer) {
