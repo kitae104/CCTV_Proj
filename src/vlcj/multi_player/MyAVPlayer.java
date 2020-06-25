@@ -1,7 +1,5 @@
 package vlcj.multi_player;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
