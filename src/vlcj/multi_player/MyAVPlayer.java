@@ -6,59 +6,73 @@ import javax.swing.JFrame;
 
 public class MyAVPlayer extends JFrame {
 
-	AVPanel avPanel1, avPanel2, avPanel3, avPanel4;
+	private AVPanel[] avPanels; 
 	
-	public AVPanel getAvPanel1() {
-		return avPanel1;
-	}
-
-	public AVPanel getAvPanel2() {
-		return avPanel2;
-	}
 	
-	public AVPanel getAvPanel3() {
-		return avPanel3;
-	}
-
-	public AVPanel getAvPanel4() {
-		return avPanel4;
-	}
-
-	public MyAVPlayer(String title, int width, int height) {
+	
+	public MyAVPlayer(String title, int width, int height, int size) {
 		setTitle(title);
 		setSize(width, height);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		// 패널 갯수 설정 
+		avPanels = new AVPanel[size];
+		
 		// 레이아웃
-		setLayout(new GridLayout(2, 2));
+		switch(size) {
+		case 1:
+			setLayout(new GridLayout(1, 1));
+			break;
+		case 2:
+			setLayout(new GridLayout(1, 2));
+			break;
+		case 4:
+			setLayout(new GridLayout(2, 2));
+			break;
+		case 8:
+			setLayout(new GridLayout(2, 4));
+			break;
+		case 16:
+			setLayout(new GridLayout(4, 4));
+			break;
+		}
 		
-		avPanel1 = new AVPanel();
-		add(avPanel1);
-		
-		avPanel2 = new AVPanel();
-		add(avPanel2);
-		
-		avPanel3 = new AVPanel();
-		add(avPanel3);
-		
-		avPanel4 = new AVPanel();
-		add(avPanel4);
-		
+		for (int i = 0; i < avPanels.length; i++) {
+			avPanels[i] = new AVPanel();
+			add(avPanels[i]);
+		}
 		setVisible(true);
 	}
 	
-	public static void main(String[] args) {
-		MyAVPlayer avPlayer = new MyAVPlayer("My AV Player", 600, 500);
-		String[] fnames1 = {"D:\\영상\\동키카\\동키카.mp4"}; 
-		String[] fnames2 = {"D:\\영상\\동키카\\test.mp4"}; 
-		String[] fnames3 = {"D:\\영상\\동키카\\동키카.mp4"}; 
-		String[] fnames4 = {"D:\\영상\\동키카\\test.mp4"}; 
-		avPlayer.getAvPanel1().setAV(fnames1);
-		avPlayer.getAvPanel2().setAV(fnames2);
-		avPlayer.getAvPanel3().setAV(fnames3);
-		avPlayer.getAvPanel4().setAV(fnames4);
-		
+	public AVPanel[] getAvPanels() {
+		return avPanels;
 	}
 
+	public static void main(String[] args) {
+		MyAVPlayer avPlayer = new MyAVPlayer("My AV Player", 600, 500, 1);
+		String[][] fnames = {{"D:\\영상\\동키카\\동키카.mp4"}, 
+				{"D:\\영상\\동키카\\test.mp4"}, 
+				{"D:\\영상\\동키카\\동키카.mp4"},
+				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"},
+				{"D:\\영상\\동키카\\동키카.mp4"}, 
+				{"D:\\영상\\동키카\\test.mp4"}, 
+				{"D:\\영상\\동키카\\동키카.mp4"},
+				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"},
+				{"D:\\영상\\동키카\\동키카.mp4"}, 
+				{"D:\\영상\\동키카\\test.mp4"}, 
+				{"D:\\영상\\동키카\\동키카.mp4"},
+				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"},
+				{"D:\\영상\\동키카\\동키카.mp4"}, 
+				{"D:\\영상\\동키카\\test.mp4"}, 
+				{"D:\\영상\\동키카\\동키카.mp4"},
+				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"}				
+		}; 
+		
+		// 화면 설정 
+		for (int i = 0; i < fnames.length; i++) {
+			avPlayer.getAvPanels()[i].setAV(fnames[i]);
+		}
+				
+	}
 }
