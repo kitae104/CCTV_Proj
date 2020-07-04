@@ -7,9 +7,7 @@ import javax.swing.JFrame;
 public class MyAVPlayer extends JFrame {
 
 	private AVPanel[] avPanels; 
-	
-	
-	
+		
 	public MyAVPlayer(String title, int width, int height, int size) {
 		setTitle(title);
 		setSize(width, height);
@@ -76,3 +74,10 @@ public class MyAVPlayer extends JFrame {
 				
 	}
 }
+
+// String id = "admin";
+// String pw = "ipcam8282";
+// String ip = "114.71.137.134";
+// String port = "11554";
+// String command = "7";
+// String url = "http://"+ ip +":"+ port +"/decoder_control.cgi?loginuse="+ id +"&loginpas="+ pw +"&command="+ command +"&onestep=0";
