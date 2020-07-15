@@ -48,7 +48,7 @@ public class MyAVPlayer extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		MyAVPlayer avPlayer = new MyAVPlayer("My AV Player", 600, 500, 1);
+		MyAVPlayer avPlayer = new MyAVPlayer("My AV Player", 600, 500, 8);
 		String[][] fnames = {{"D:\\영상\\동키카\\동키카.mp4"}, 
 				{"D:\\영상\\동키카\\test.mp4"}, 
 				{"D:\\영상\\동키카\\동키카.mp4"},
@@ -80,4 +80,5 @@ public class MyAVPlayer extends JFrame {
 // String ip = "114.71.137.134";
 // String port = "11554";
 // String command = "7";
+// 명령어 처리 
 // String url = "http://"+ ip +":"+ port +"/decoder_control.cgi?loginuse="+ id +"&loginpas="+ pw +"&command="+ command +"&onestep=0";
