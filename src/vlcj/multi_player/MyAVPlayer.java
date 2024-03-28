@@ -49,21 +49,15 @@ public class MyAVPlayer extends JFrame {
 
 	public static void main(String[] args) {
 		MyAVPlayer avPlayer = new MyAVPlayer("My AV Player", 600, 500, 8);
-		String[][] fnames = {{"D:\\영상\\동키카\\동키카.mp4"}, 
-				{"D:\\영상\\동키카\\test.mp4"}, 
-				{"D:\\영상\\동키카\\동키카.mp4"},
-				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"},
-				{"D:\\영상\\동키카\\동키카.mp4"}, 
-				{"D:\\영상\\동키카\\test.mp4"}, 
-				{"D:\\영상\\동키카\\동키카.mp4"},
-				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"},
-				{"D:\\영상\\동키카\\동키카.mp4"}, 
-				{"D:\\영상\\동키카\\test.mp4"}, 
-				{"D:\\영상\\동키카\\동키카.mp4"},
-				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"},
-				{"D:\\영상\\동키카\\동키카.mp4"}, 
-				{"D:\\영상\\동키카\\test.mp4"}, 
-				{"D:\\영상\\동키카\\동키카.mp4"},
+		String[][] fnames = {
+				{"D:\\Projects\\2024\\mp4\\1.mp4"},
+				{"D:\\Projects\\2024\\mp4\\2.mp4"},
+				{"D:\\Projects\\2024\\mp4\\3.mp4"},
+				{"D:\\Projects\\2024\\mp4\\4.mp4"},
+				{"D:\\Projects\\2024\\mp4\\5.mp4"},
+				{"D:\\Projects\\2024\\mp4\\6.mp4"},
+				{"D:\\Projects\\2024\\mp4\\7.mp4"},
+				{"D:\\Projects\\2024\\mp4\\8.mp4"},
 				{"rtsp://admin:ipcam8282@114.71.137.134:11554/udp/av0_0"}				
 		}; 
 		
