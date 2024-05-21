@@ -21,3 +21,5 @@ target/classes/vlcj/player/play.png
 target/classes/vlcj/player/VLCPlayer$1.class
 target/classes/vlcj/player/VLCPlayer$2.class
 target/classes/vlcj/player/VLCPlayer.class
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/CCTV_Proj/CCTV_Proj/pom.properties
